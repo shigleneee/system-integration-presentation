@@ -31,7 +31,7 @@ interface Question {
   id: number;
   title: string;
   question: string;
-  answer: string;
+  answer: string[];
   x: number;
   y: number;
   found: boolean;
@@ -52,6 +52,7 @@ export default function App() {
   const [loading, setLoading] = useState(true);
   const [selectedQuestion, setSelectedQuestion] = useState<Question | null>(null);
   const [showAnswer, setShowAnswer] = useState(false);
+  const [answerPage, setAnswerPage] = useState(0);
   const [foundCount, setFoundCount] = useState(0);
   const [showIntro, setShowIntro] = useState(true);
   const [focusedIndex, setFocusedIndex] = useState<number | null>(null);
@@ -59,6 +60,18 @@ export default function App() {
   const [showMasterImage, setShowMasterImage] = useState(false);
   const [masterImageIndex, setMasterImageIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  function splitAnswer(text: string, maxLength = 350) {
+   const chunks: string[] = [];
+   for (let i = 0; i < text.length; i += maxLength) {
+     chunks.push(text.slice(i, i + maxLength));
+   }
+  return chunks;
+}
+
+  useEffect(() => {
+    setAnswerPage(0);
+  }, [selectedQuestion]);
 
   useEffect(() => {
     async function init() {
@@ -320,7 +333,7 @@ export default function App() {
                 <div className="flex justify-between items-start mb-8">
                   <div>
                     <span className="text-xs font-mono text-blue-400 uppercase tracking-widest mb-2 block">
-                      {selectedQuestion.zone} Object Found
+                      {selectedQuestion.zone} СЕМИНАР 3
                     </span>
                     <h2 className="text-2xl font-bold text-white">{selectedQuestion.title}</h2>
                   </div>
@@ -349,7 +362,7 @@ export default function App() {
                         onClick={() => setShowAnswer(true)}
                         className="w-full py-4 bg-emerald-500 hover:bg-emerald-400 text-neutral-950 font-bold rounded-2xl transition-colors flex items-center justify-center gap-2 group"
                       >
-                        REVEAL ANSWER
+                        АСУУЛТЫН ХАРИУЛТ
                         <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                       </motion.button>
                     ) : (
@@ -358,14 +371,49 @@ export default function App() {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         className="bg-emerald-500/10 border border-emerald-500/20 p-8 rounded-2xl"
-                      >
-                        <span className="text-xs font-mono text-emerald-500 uppercase tracking-widest mb-3 block">
-                          Correct Answer
-                        </span>
-                        <p className="text-2xl font-bold text-emerald-400">
-                          {selectedQuestion.answer}
-                        </p>
-                      </motion.div>
+                    >
+                      <span className="text-xs font-mono text-emerald-500 uppercase tracking-widest mb-3 block">
+                        Answer
+                      </span>
+                   {(() => {
+  const parts = selectedQuestion.answer;
+  const current = parts[answerPage];
+
+  return (
+    <div className="space-y-6">
+      <p className="text-xl font-bold text-emerald-400 leading-relaxed whitespace-pre-wrap">
+        {current}
+      </p>
+
+      {parts.length > 1 && (
+        <div className="flex items-center justify-between pt-4">
+          <button
+            onClick={() => setAnswerPage(p => Math.max(0, p - 1))}
+            disabled={answerPage === 0}
+            className="px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 disabled:opacity-30"
+          >
+            Өмнөх
+          </button>
+
+          <span className="text-xs font-mono text-emerald-500">
+            {answerPage + 1} / {parts.length}
+          </span>
+
+          <button
+            onClick={() =>
+              setAnswerPage(p => Math.min(parts.length - 1, p + 1))
+            }
+            disabled={answerPage === parts.length - 1}
+            className="px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 disabled:opacity-30"
+          >
+            Дараах
+          </button>
+        </div>
+      )}
+    </div>
+  );
+})()}
+                  </motion.div>
                     )}
                   </AnimatePresence>
                 </div>
