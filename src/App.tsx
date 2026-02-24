@@ -279,10 +279,10 @@ export default function App() {
           className="bg-neutral-900/80 backdrop-blur-md border border-white/10 p-6 rounded-2xl pointer-events-auto"
         >
           <h1 className="text-2xl font-bold tracking-tight mb-1 bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent">
-            Cyberpunk Dev Sanctuary
+            System integration and architecture
           </h1>
           <p className="text-neutral-400 text-sm font-mono uppercase tracking-widest">
-            Interactive 3D Environment
+            Семинарын ажил 2 
           </p>
           
           <div className="mt-6 flex items-center gap-4">
@@ -333,7 +333,7 @@ export default function App() {
                 <div className="flex justify-between items-start mb-8">
                   <div>
                     <span className="text-xs font-mono text-blue-400 uppercase tracking-widest mb-2 block">
-                      {selectedQuestion.zone} СЕМИНАР 3
+                      СЕМИНАР 2 АСУУЛТУУД
                     </span>
                     <h2 className="text-2xl font-bold text-white">{selectedQuestion.title}</h2>
                   </div>
@@ -362,7 +362,7 @@ export default function App() {
                         onClick={() => setShowAnswer(true)}
                         className="w-full py-4 bg-emerald-500 hover:bg-emerald-400 text-neutral-950 font-bold rounded-2xl transition-colors flex items-center justify-center gap-2 group"
                       >
-                        АСУУЛТЫН ХАРИУЛТ
+                         ХАРИУЛТ
                         <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                       </motion.button>
                     ) : (
@@ -427,7 +427,7 @@ export default function App() {
                   onClick={() => setSelectedQuestion(null)}
                   className="text-sm font-medium text-neutral-400 hover:text-white transition-colors"
                 >
-                  Close Terminal
+                  Терминал хаах
                 </button>
               </div>
             </motion.div>
