@@ -39,11 +39,11 @@ interface Question {
 }
 
 const ZONES = [
-  { name: 'Desk', x: [20, 50], y: [40, 70] },
-  { name: 'Coffee Station', x: [70, 90], y: [60, 85] },
-  { name: 'Whiteboard', x: [5, 25], y: [15, 45] },
-  { name: 'Server Rack', x: [75, 95], y: [10, 50] },
-  { name: 'Bookshelf', x: [40, 70], y: [10, 35] },
+  { name: 'Ширээ', x: [20, 50], y: [40, 70] },
+  { name: 'Кофены хэсэг', x: [70, 90], y: [60, 85] },
+  { name: 'Самбар', x: [5, 25], y: [15, 45] },
+  { name: 'Сервер', x: [75, 95], y: [10, 50] },
+  { name: 'Номын тавиур', x: [40, 70], y: [10, 35] },
 ];
 
 export default function App() {
@@ -243,7 +243,7 @@ export default function App() {
           title="Focus Main Board"
         >
           <Workflow className="w-5 h-5 group-hover:rotate-12 transition-transform" />
-          <span className="font-mono text-sm uppercase tracking-widest font-bold">Master</span>
+          <span className="font-mono text-sm uppercase tracking-widest font-bold">Диаграм үзэх</span>
         </button>
         
         <div className="h-14 w-px bg-white/10 self-center mx-2" />
@@ -261,7 +261,7 @@ export default function App() {
             focusedIndex === null && !isBoardFocused ? "border-blue-500 text-blue-500" : "border-white/10 text-white hover:bg-neutral-800"
           )}
         >
-          World Map
+          Өрөөг харах
         </button>
         <button 
           onClick={handleNext}
@@ -279,7 +279,7 @@ export default function App() {
           className="bg-neutral-900/80 backdrop-blur-md border border-white/10 p-6 rounded-2xl pointer-events-auto"
         >
           <h1 className="text-2xl font-bold tracking-tight mb-1 bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent">
-            System integration and architecture
+            Систем интегрейшн ба архитектур
           </h1>
           <p className="text-neutral-400 text-sm font-mono uppercase tracking-widest">
             Семинарын ажил 2 
@@ -294,7 +294,7 @@ export default function App() {
               />
             </div>
             <span className="text-xs font-mono text-emerald-500">
-              {foundCount}/{questions.length} FOUND
+              {foundCount}/{questions.length} ОЛДСОН
             </span>
           </div>
         </motion.div>
@@ -373,7 +373,7 @@ export default function App() {
                         className="bg-emerald-500/10 border border-emerald-500/20 p-8 rounded-2xl"
                     >
                       <span className="text-xs font-mono text-emerald-500 uppercase tracking-widest mb-3 block">
-                        Answer
+                        Хариулт
                       </span>
                    {(() => {
   const parts = selectedQuestion.answer;
@@ -504,7 +504,7 @@ export default function App() {
               
               <div className="px-8 py-4 bg-neutral-950/50 border-t border-white/5 flex items-center justify-between">
                 <div className="flex items-center gap-4">
-                  <p className="text-xs font-mono text-neutral-500 uppercase tracking-widest">Master System Documentation // V2.4.0</p>
+                  <p className="text-xs font-mono text-neutral-500 uppercase tracking-widest">Диаграм зураглал, ICSI314</p>
                   <div className="flex gap-1">
                     {[0, 1].map(i => (
                       <div 
@@ -551,19 +551,26 @@ export default function App() {
                 transition={{ delay: 0.3 }}
                 className="text-4xl md:text-5xl font-bold mb-4"
               >
-                Systen integration and architecture
+                Систем интегрейшн ба архитектур
               </motion.h2>
-              
+
+              <motion.h3>
+                Лаб №2: Системийн шаардлага болон Use-Case тодорхойлох
+              </motion.h3>
+              <br></br>
               <motion.p 
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.4 }}
-                className="text-neutral-400 text-lg mb-12 leading-relaxed"
+                className="text-neutral-500 mb-10 leading-relaxed"
               >
-                Dashryenchin 23b1num1789,
-                Khuslen 24b1num3032, 
-                Egshiglen 23bn1num1728,
-                Nyamjargal 20b1num2614
+                Дашренчин.Эрд (23B1NUM1789)
+                <br></br>
+                Хүслэн.Ган (24B1NUM3032)
+                <br></br>
+                Эгшиглэн.Нар (23B1NUM1728)
+                <br></br>
+                Нямжаргал.Тэг (20B1NUM2614)
               </motion.p>
               
               <motion.button
@@ -598,13 +605,13 @@ export default function App() {
           >
             <div className="text-center text-neutral-950">
               <Trophy className="w-24 h-24 mx-auto mb-8" />
-              <h2 className="text-6xl font-black mb-4 uppercase italic">Sanctuary Mastered</h2>
-              <p className="text-xl font-medium mb-12 opacity-80">You have successfully uncovered all 29 hidden secrets.</p>
+              <h2 className="text-6xl font-black mb-4 uppercase italic">Семинарын ажил дууслаа.</h2>
+              <p className="text-xl font-medium mb-12 opacity-80">Бататгах 29 асуултад амжилттай хариуллаа.</p>
               <button 
                 onClick={() => window.location.reload()}
                 className="px-12 py-4 bg-neutral-950 text-white font-bold rounded-full hover:bg-neutral-800 transition-colors"
               >
-                REBOOT SYSTEM
+                Системийг дахин эхлүүлэх
               </button>
             </div>
           </motion.div>
