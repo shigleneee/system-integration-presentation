@@ -62,9 +62,8 @@
  **/
 
 export async function generateOfficeImage() {
-  // Replace this URL with the local path to your Office Image if you have one
-  // Or keep this high-quality placeholder
-  return "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1920&h=1080"; 
+  // Pointing to the file you just put in /public
+  return "/office2.png"; 
 }
 
 export async function generateQuestions() {
