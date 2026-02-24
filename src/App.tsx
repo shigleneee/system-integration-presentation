@@ -551,7 +551,7 @@ export default function App() {
                 transition={{ delay: 0.3 }}
                 className="text-4xl md:text-5xl font-bold mb-4"
               >
-                Welcome to the Sanctuary
+                Systen integration and architecture
               </motion.h2>
               
               <motion.p 
@@ -560,7 +560,10 @@ export default function App() {
                 transition={{ delay: 0.4 }}
                 className="text-neutral-400 text-lg mb-12 leading-relaxed"
               >
-                Explore this high-fidelity isometric environment. Hidden within the artifacts of this modern engineer's office are <span className="text-emerald-400 font-bold">29 technical challenges</span>. Find them all to master the sanctuary.
+                Dashryenchin 23b1num1789,
+                Khuslen 24b1num3032, 
+                Egshiglen 23bn1num1728,
+                Nyamjargal 20b1num2614
               </motion.p>
               
               <motion.button
@@ -572,7 +575,7 @@ export default function App() {
                 onClick={() => setShowIntro(false)}
                 className="px-12 py-4 bg-white text-neutral-950 font-bold rounded-full hover:bg-emerald-400 transition-colors"
               >
-                ENTER ENVIRONMENT
+                ЭХЛЭХ
               </motion.button>
             </div>
             
