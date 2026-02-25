@@ -113,26 +113,26 @@ interface PhaseData {
 
 const PHASES: PhaseData[] = [
   {
-    num:'01', name:'Төлөвлөлт', tag:'Суурь үе шат', icon:'🎯', color:C.p1,
+    num:'01', name:'Төлөвлөлт', tag:'Суурь үе шат', color:C.p1,
     numBg:'#0a1f30', tagBorder:'#1a3a50',
     tagline:'Системийн зорилго, хамрах хүрээ, боломжийн үнэлгээг тодорхойлох үе шат',
     body:(
       <G3>
         <div>
-          <CT>📋 Зорилго & Хамрах хүрээ</CT>
+          <CT> Зорилго & Хамрах хүрээ</CT>
           <It color={C.p1} label="Системийн зорилго" text="Улаанбаатар хотын заалнуудыг нэг платформд нэгтгэж, хэрэглэгчдэд захиалга хийх боломж олгох" />
           <It color={C.p1} label="Хамрах хүрээ" text="Цаг захиалах, байршил харьцуулах, үнэ шалгах, онлайн төлбөр хийх" />
           <It color={C.p1} label="Зах зээлийн давуу тал" text='Хэрэглэгчийн "search cost"-ыг бууруулсан нэгдсэн aggregation шийдэл' />
           <OBox items={['System Request баримт бичиг','Feasibility Analysis тайлан','Workplan / Ажлын хуваарь']} />
         </div>
         <div>
-          <CT>👥 Stakeholder тодорхойлох</CT>
+          <CT> Stakeholder тодорхойлох</CT>
           <It color={C.p1} label="Дотоод оролцогчид" text={<><Chip label="Төслийн эзэн" variant="blue"/><Chip label="IT баг" variant="blue"/><Chip label="Системийн Админ" variant="blue"/><Chip label="Маркетинг баг" variant="blue"/></>} />
           <It color={C.p1} label="Гадаад оролцогчид" text={<><Chip label="Хэрэглэгч" variant="orange"/><Chip label="Заалны эзэд" variant="green"/><Chip label="QPay/Monpay" variant="orange"/><Chip label="E-Barimt" variant="purple"/><Chip label="БТСУХ" variant="cyan"/></>} />
           <It color={C.p1} label="Технологийн нийлүүлэгчид" text={<><Chip label="AWS/GCloud" variant="cyan"/><Chip label="SMS/Email" variant="cyan"/></>} />
         </div>
         <div>
-          <CT>🔍 Feasibility шинжилгээ</CT>
+          <CT> Feasibility шинжилгээ</CT>
           <It color={C.p1} label="Техникийн боломж" text="QPay, Monpay, E-Barimt API бэлэн. Cloud hosting дэд бүтэц бий." />
           <It color={C.p1} label="Зохион байгуулалтын боломж" text="Спорт заалнуудыг платформд нэгтгэх сонирхол өндөр." />
           <It color={C.p1} label="Хуулийн боломж" text="E-Barimt, НӨАТ, Хувийн мэдээлэл хамгаалах хуульд нийцэх шаардлага тодорхой." />
@@ -142,13 +142,13 @@ const PHASES: PhaseData[] = [
     ),
   },
   {
-    num:'02', name:'Шинжилгээ', tag:'Шаардлага цуглуулах', icon:'🔬', color:C.p2,
+    num:'02', name:'Шинжилгээ', tag:'Шаардлага цуглуулах', color:C.p2,
     numBg:'#0a1f0a', tagBorder:'#1a3a1a',
     tagline:'Функциональ болон функциональ бус шаардлагуудыг нарийвчлан тодорхойлох үе шат',
     body:(
       <G3>
         <div>
-          <CT>⚙️ Functional Requirements</CT>
+          <CT> Functional Requirements</CT>
           {[['FR-01','Бүртгэл / нэвтрэх / профайл удирдах'],['FR-02','Заал хайх, шүүх (төрөл, байршил, үнэ, цаг)'],
             ['FR-03','Заалны цаг захиалах (3 алхам)'],['FR-04','Захиалга / Онлайн төлбөрийн процесс'],
             ['FR-05','Заалны байршлыг газрын зураг дээр харах'],['FR-06','Сэтгэгдэл, үнэлгээ бичих функц'],
@@ -157,7 +157,7 @@ const PHASES: PhaseData[] = [
           ].map(([l,t])=><It key={l} color={C.p2} label={l} text={t}/>)}
         </div>
         <div>
-          <CT>📊 Non-Functional Requirements</CT>
+          <CT> Non-Functional Requirements</CT>
           <It color={C.p2} label="Гүйцэтгэл" text="Хайх/захиалахад <2 секундэд хариу. 1,000+ зэрэг хандалтад гацахгүй." />
           <It color={C.p2} label="Бэлэн байдал" text="365/24/7 — 99.9% uptime. 1 цагт сэргэх." />
           <It color={C.p2} label="Аюулгүй байдал" text="PCI DSS, SSL/TLS. Өгөгдөл Encryption-аар хадгалагдана." />
@@ -166,7 +166,7 @@ const PHASES: PhaseData[] = [
           <It color={C.p2} label="Хууль / Стандарт" text="Хувийн мэдээлэл хамгаалах хууль. E-Barimt НӨАТ автоматжуулалт." />
         </div>
         <div>
-          <CT>🗺️ Use Case & Stakeholder</CT>
+          <CT> Use Case & Stakeholder</CT>
           <It color={C.p2} label="Хэрэглэгч" text="Заал хайх → Цаг захиалах → Онлайн төлбөр → И-баримт авах" />
           <It color={C.p2} label="Заалны эзэн" text="Цаг, үнэ оруулах → Захиалгын тайлан → Орлогын тайлан" />
           <It color={C.p2} label="Системийн Админ" text="Эрх удирдах → Серверийг хянах → Заал нэмэх/устгах" />
@@ -177,27 +177,27 @@ const PHASES: PhaseData[] = [
     ),
   },
   {
-    num:'03', name:'Design — Дизайн', tag:'Архитектур & UI', icon:'🎨', color:C.p3,
+    num:'03', name:'Design — Дизайн', tag:'Архитектур & UI', color:C.p3,
     numBg:'#1f1a0a', tagBorder:'#3a2a0a',
     tagline:'Системийн архитектур, өгөгдлийн бүтэц, UI/UX загварыг гаргах үе шат',
     body:(
       <G3>
         <div>
-          <CT>🖥️ UI/UX Дизайн</CT>
+          <CT> UI/UX Дизайн</CT>
           <It color={C.p3} label="3 алхмын захиалга урсгал" text="Нэвтрэх → Заал сонгох → Цаг/төлбөр баталгаажуулах" />
           <It color={C.p3} label="Responsive Design" text="Mobile-first — утас, таблет, PC дэлгэц бүрт зөв харагдах" />
           <It color={C.p3} label="Байршлын харьцуулалт" text="Байршил, үнэ, цагийн хуваарийг нэг дэлгэцэн дээр харьцуулах" />
           <It color={C.p3} label="Хайлтын шүүлтүүр" text="Спортын төрөл, байршил, үнийн хязгаар" />
         </div>
         <div>
-          <CT>🏗️ Системийн Архитектур</CT>
+          <CT> Системийн Архитектур</CT>
           <It color={C.p3} label="Horizontal Scaling" text="10x өсөхөд архитектурын өөрчлөлтгүйгээр даах бүтэц" />
           <It color={C.p3} label="Cloud Infrastructure" text="AWS / Google Cloud. 99.9% uptime хангах." />
           <It color={C.p3} label="API Gateway дизайн" text="QPay, Monpay, SocialPay. E-Barimt. SMS мэдэгдлийн API." />
           <It color={C.p3} label="DB бүтэц" text="Хэрэглэгч, заал, захиалга, гүйлгээ хүснэгтүүд. Encryption-тэй." />
         </div>
         <div>
-          <CT>🔒 Аюулгүй байдлын дизайн</CT>
+          <CT> Аюулгүй байдлын дизайн</CT>
           <It color={C.p3} label="Төлбөрийн аюулгүй байдал" text="PCI DSS стандарт, SSL/TLS протокол бүрэн хэрэгжүүлэх" />
           <It color={C.p3} label="Өгөгдлийн шифрлэлт" text="Утасны дугаар, нууц үг DB-д Encryption хэлбэрээр" />
           <It color={C.p3} label="Хандалтын эрх" text="Role-based: Хэрэглэгч / Vendor / Админ тус бүр өөр эрхтэй" />
@@ -208,27 +208,27 @@ const PHASES: PhaseData[] = [
     ),
   },
   {
-    num:'04', name:'Implementation — Хөгжүүлэлт', tag:'Кодлох & Интеграц', icon:'💻', color:C.p4,
+    num:'04', name:'Implementation — Хөгжүүлэлт', tag:'Кодлох & Интеграц', color:C.p4,
     numBg:'#1a0a1f', tagBorder:'#3a1a3a',
     tagline:'Системийг бодит код болгон хөгжүүлж, гадаад системүүдтэй холбох үе шат',
     body:(
       <G3>
         <div>
-          <CT>🖼️ Frontend хөгжүүлэлт</CT>
+          <CT> Frontend хөгжүүлэлт</CT>
           <It color={C.p4} label="Хайлт & Шүүлтүүр" text="Спортын төрөл, байршил, үнэ, цагаар хайх UI" />
           <It color={C.p4} label="Захиалгын урсгал" text="3 алхмын intuitive flow: Заал → Цаг → Баталгаажуулалт" />
           <It color={C.p4} label="Байршлын харьцуулалт" text="Хэрэглэгчид ойр заалнуудыг газрын зурагтай харуулах" />
           <It color={C.p4} label="Vendor Portal" text="Заалны эзэд цаг, үнэ, мэдээлэл оруулах, тайлан харах дэлгэц" />
         </div>
         <div>
-          <CT>⚡ Backend & API Интеграц</CT>
+          <CT> Backend & API Интеграц</CT>
           <It color={C.p4} label="QPay / Monpay / SocialPay" text="Төлбөрийн гарцуудтай API интеграц. Гүйлгээг баталгаажуулах логик." />
           <It color={C.p4} label="E-Barimt API" text="Гүйлгээ бүрд НӨАТ-ын баримт автоматаар үүсгэх." />
           <It color={C.p4} label="SMS / Email мэдэгдэл" text="Захиалга баталгаажсан үед автоматаар мэдэгдэл илгээх." />
           <It color={C.p4} label="Cloud Deployment" text="AWS / GCloud. Auto-scaling тохируулах." />
         </div>
         <div>
-          <CT>👤 Хөгжүүлэлтийн баг & Үүрэг</CT>
+          <CT> Хөгжүүлэлтийн баг & Үүрэг</CT>
           <It color={C.p4} label="ИТ инженерүүд" text="Код бичих, өгөгдлийн сангийн бүтэц болон аюулгүй байдлыг хангах" />
           <It color={C.p4} label="Системийн Админ" text="Эрх удирдах, серверийн ажиллагааг хянах, алдаа засварлах" />
           <It color={C.p4} label="Маркетинг баг" text="Шинэ спорт заалнуудыг системд нэгтгэх, vendor onboarding хийх" />
@@ -238,26 +238,26 @@ const PHASES: PhaseData[] = [
     ),
   },
   {
-    num:'05', name:'Testing — Тест', tag:'Чанарын баталгаа', icon:'🧪', color:C.p5,
+    num:'05', name:'Testing — Тест', tag:'Чанарын баталгаа', color:C.p5,
     numBg:'#1f0a0a', tagBorder:'#3a1a1a',
     tagline:'Non-functional шаардлагуудыг баталгаажуулах, алдаа илрүүлэх үе шат',
     body:(
       <G3>
         <div>
-          <CT>⚡ Гүйцэтгэлийн тест</CT>
+          <CT> Гүйцэтгэлийн тест</CT>
           <It color={C.p5} label="Response Time тест" text="Захиалах товч дарахад 2 секундэд хариу өгч байгаа эсэхийг шалгах" />
           <It color={C.p5} label="Load Test" text="1,000+ хэрэглэгч зэрэг хандахад систем гацахгүй эсэхийг шалгах" />
           <It color={C.p5} label="Peak Load симуляц" text="Ажлын цаг дуусах үеийн ачааллыг дуурайлган туршиж, тогтвортой байдлыг шалгах" />
         </div>
         <div>
-          <CT>🔐 Аюулгүй байдлын тест</CT>
+          <CT> Аюулгүй байдлын тест</CT>
           <It color={C.p5} label="PCI DSS шалгалт" text="Төлбөрийн гүйлгээ PCI DSS стандартад нийцэж байгаа эсэхийг баталгаажуулах" />
           <It color={C.p5} label="Encryption тест" text="Хэрэглэгчийн утасны дугаар, нууц үг зөв шифрлэгдсэн эсэхийг шалгах" />
           <It color={C.p5} label="Role-based access тест" text="Зөвхөн эрх бүхий админ санхүүгийн тайланд хандах эрхтэй байгааг шалгах" />
           <It color={C.p5} label="SSL/TLS тест" text="Бүх API холболт шифрлэгдсэн протоколоор явагдаж байгааг шалгах" />
         </div>
         <div>
-          <CT>👥 Хэрэглэгчийн тест (UAT)</CT>
+          <CT> Хэрэглэгчийн тест (UAT)</CT>
           <It color={C.p5} label="3 алхмын захиалга UAT" text="Бодит хэрэглэгчид 3 алхмын дотор захиалга дуусгаж чадаж байгаа эсэхийг туршах" />
           <It color={C.p5} label="Responsive тест" text="iOS, Android, таблет, PC дэлгэц дээр зөв харагдаж байгааг шалгах" />
           <It color={C.p5} label="E-Barimt интеграц тест" text="Гүйлгээ бүрд НӨАТ-ын баримт зөв үүсгэгдэж байгааг шалгах" />
@@ -268,26 +268,26 @@ const PHASES: PhaseData[] = [
     ),
   },
   {
-    num:'06', name:'Maintenance — Засвар үйлчилгээ', tag:'Тасралтгүй үйл ажиллагаа', icon:'🔧', color:C.p6,
+    num:'06', name:'Maintenance — Засвар үйлчилгээ', tag:'Тасралтгүй үйл ажиллагаа', color:C.p6,
     numBg:'#0a1a1f', tagBorder:'#1a3a3a',
     tagline:'Системийг байнга ажиллуулах, сайжруулах, өргөжүүлэх үе шат',
     body:(
       <G3>
         <div>
-          <CT>🖥️ Системийн ажиллагаа</CT>
+          <CT> Системийн ажиллагаа</CT>
           <It color={C.p6} label="99.9% Uptime" text="365/24/7 тасралтгүй ажиллагаа хангах. Серверийг байнга хянах." />
           <It color={C.p6} label="Өдөр бүрийн Backup" text="Захиалга, төлбөрийн мэдээллийг автоматаар Cloud Backup хийх." />
           <It color={C.p6} label="Техникийн алдаа засварлах" text="Гарсан техникийн алдааг шуурхай засварлах." />
         </div>
         <div>
-          <CT>📈 Өргөжүүлэлт & Сайжруулалт</CT>
+          <CT> Өргөжүүлэлт & Сайжруулалт</CT>
           <It color={C.p6} label="Шинэ заал нэмэх" text="Маркетинг баг шинэ спорт заалнуудыг тасралтгүй системд нэгтгэж байх." />
           <It color={C.p6} label="Horizontal Scaling" text="Хэрэглэгч болон заалны тоо 10x нэмэгдэхэд архитектур өөрчлөлтгүйгээр даах." />
           <It color={C.p6} label="Dynamic Pricing" text='Vendor-уудад оргил/сул цагийн шинжилгээ хийж "Уян хатан үнийн тариф" тогтооход туслах.' />
           <It color={C.p6} label="Business Intelligence" text="Захиалгын тайлан, гүйлгээний мэдээлэлд суурилсан шийдвэр гаргалтыг дэмжих." />
         </div>
         <div>
-          <CT>💬 Хэрэглэгчийн санал & Хууль</CT>
+          <CT> Хэрэглэгчийн санал & Хууль</CT>
           <It color={C.p6} label="Хэрэглэгчийн санал" text="Үнэлгээ, сэтгэгдлийн мэдээллийг ашиглан системийг байнга сайжруулах." />
           <It color={C.p6} label="Хуулийн шинэчлэлт" text="МУ-ын Хувийн мэдээлэл хамгаалах хуульд гарах өөрчлөлтүүдийг дагаж шинэчлэх." />
           <It color={C.p6} label="E-Barimt шинэчлэлт" text="Татварын системийн API өөрчлөлтийг тасралтгүй дагах." />
@@ -311,9 +311,9 @@ const FLOW_STEPS = [
 const CONNECTORS = [
   'Planning дуусч Analysis эхэлнэ',
   'Analysis дуусч Design эхэлнэ',
-  '▼ Design дуусч Implementation эхэлнэ',
-  '▼ Implementation дуусч Testing эхэлнэ',
-  '▼ Testing дуусч Maintenance эхэлнэ',
+  'Design дуусч Implementation эхэлнэ',
+  'Implementation дуусч Testing эхэлнэ',
+  'Testing дуусч Maintenance эхэлнэ',
 ];
 
 function EZaalDiagram() {
@@ -513,7 +513,7 @@ export default function App() {
   const zoomY = (50 - targetY) * zoomScale;
 
   const TABS: { key: typeof masterTab; label: string }[] = [
-    { key: 'sdlc',      label: '📋 E-Zaal SDLC' },
+    { key: 'sdlc',      label: '⬡ E-Zaal SDLC' },
     { key: 'diagram-a', label: '⬡ Logic Flow A' },
     { key: 'diagram-b', label: '⬡ Architecture B' },
   ];
